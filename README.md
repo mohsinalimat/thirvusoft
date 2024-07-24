@@ -33,18 +33,22 @@ nvm install 18
 sudo apt-get install npm
 sudo npm install -g yarn
 sudo pip3 install frappe-bench
+
+#Upto the above command first time execution is enough
+
+
 bench init --frappe-branch version-15 frappebench1(your bench name)
 cd frappebench1
 
 bench new-site siddsite
 
-Install ERPNext and other Apps
+Install ERPNext and other Apps:
 
 bench get-app payments
 bench get-app --branch version-15 erpnext
 bench get-app hrms
 bench --site siddsite install-app erpnext
-bench --site siddsite install-app hrms [HR]
+bench --site siddsite install-app hrms #HR
 
 bench use siddsite
 bench --site siddsite add-to-hosts
