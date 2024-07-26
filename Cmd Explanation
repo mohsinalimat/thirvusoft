@@ -1,0 +1,77 @@
+FRAPPE SETUP COMMAND
+
+sudo apt-get update -y
+	Sudo superuser (administrator) privileges
+	Updates the list of available packages and their versions
+sudo apt-get upgrade -y
+	Apt-get It provides a simple way to install, update, and remove packages.
+	Upgrades all the installed packages to the latest versions available
+
+Install Required Packages
+
+sudo apt-get install git
+sudo apt-get install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils
+	The packages being installed are:
+python3-dev: Contains the header files and a static library for Python 3. It is necessary for building Python modules and extensions.
+python3.10-dev: Contains the header files and a static library specifically for Python 3.10. It is similar to python3-dev but targets Python 3.10.
+python3-setuptools: A package that helps in easily downloading, building, installing, upgrading, and uninstalling Python packages.
+python3-pip: The package installer for Python 3. It allows you to install and manage additional packages that are not part of the Python standard library.
+python3-distutils: Contains the distutils module for Python 3, which is a standard utility for distributing Python modules.
+sudo apt-get install python3.10-venv
+	Install python 3 Virtual Environment					
+sudo apt-get install software-properties-common
+	useful for adding new software repositories
+sudo apt install mariadb-server mariadb-client
+mariadb-server: The package that contains the MariaDB server software, which is a popular open-source relational database management system.
+mariadb-client: The package that contains the MariaDB client software, which is used to connect to and interact with the MariaDB server.
+sudo apt-get install redis-server
+redis-server: The package that contains the Redis server software, which is an in-memory data structure store used as a database, cache, and message broker
+
+sudo apt-get install xvfb libfontconfig wkhtmltopdf
+	xvfb  X Virtual FrameBuffer It's useful for running graphical applications on servers without a display.
+
+sudo apt-get install libmysqlclient-dev
+libmysqlclient-dev: The package that contains the development files (headers and libraries) required to compile applications that use MySQL.
+
+
+
+
+
+
+CONFIGURE SQL SERVER:
+sudo mysql_secure_installation
+(After the above command there will be some Yes or No question --Refer docs)
+
+sudo nano /etc/mysql/my.cnf
+	Nano- Command line text editor to edit the configuration file
+sudo service mysql restart
+sudo apt install curl
+	Crul data exchange between a device and a server through a terminal
+
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.profile
+nvm install 18
+
+sudo apt-get install npm
+sudo npm install -g yarn
+	Yarn is a JavaScript package manager for Node. js
+sudo pip3 install frappe-bench
+	Pip3 used to install python packages, without pip3 can’t install python
+# Upto the above command first time execution is enough
+
+
+bench init --frappe-branch version-15 frappebench1(your bench name)
+cd frappebench1
+
+bench new-site siddsite
+
+Install ERPNext and other Apps:
+
+bench get-app paymentss
+bench get-app --branch version-15 erpnext
+bench get-app hrms
+bench --site siddsite install-app erpnext
+bench --site siddsite install-app hrms #HR
+
+bench use siddsite
+bench --site siddsite add-to-hosts
