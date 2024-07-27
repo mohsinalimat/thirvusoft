@@ -1,0 +1,22 @@
+Installing GIT in ubuntu
+	sudo apt install git
+Check version
+	git --version
+Git config
+	git config --global user.name "siddarth_asus"
+git config --global user.email "siddarthknk@gmail.com"
+
+Git clone
+	Git clone https://github.com/siddarththirvusoft/gitpractice
+Git clone on a new system
+	 git clone https://siddarth-private@github.com/siddarththirvusoft/gitpractice
+Cloning into 'gitpractice'...
+info: please complete authentication in your browser…
+
+After making changes:
+	Git add .
+	Git commit -m “first update”
+Git push origin main
+
+GIT PULL COMMAND
+Git pull origin main
